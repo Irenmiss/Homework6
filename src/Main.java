@@ -6,8 +6,8 @@ public class Main {
         int totalSavings = 0;
         int i = 0;
         while (totalSavings < 2_459_000) {
-            totalSavings = totalSavings + savingsInMonth;
-            totalSavings = totalSavings + (totalSavings / 100);
+            totalSavings += savingsInMonth;
+            totalSavings += (totalSavings / 100);
             i++;
             System.out.println("Месяц " + i + ", сумма накоплений равна " + totalSavings + " рублей.");
         }
@@ -25,17 +25,17 @@ public class Main {
         System.out.println();
         System.out.println("Задание 6.1.3.");
         int population = 12_000_000;
-        int birthRateInYear = (population / 1000) * 17;
-        int mortalityRateInYear = (population / 1000) * 8;
+        int birthRateInYear = 17;
+        int mortalityRateInYear = 8;
         for (int c = 1; c <= 10; c++) {
-            population = (population + birthRateInYear) - mortalityRateInYear;
+            population += (population * (birthRateInYear - mortalityRateInYear)) / 1000;
             System.out.println("Год " + c + ", численность населения составляет " + population + " человек.");
         }
         System.out.println("Задание 6.2.1.");
         double totalSavingsOfVasiliy = 15000;
         int d = 0;
         while (totalSavingsOfVasiliy <= 12_000_000) {
-            totalSavingsOfVasiliy = totalSavingsOfVasiliy + (totalSavingsOfVasiliy * 0.07);
+            totalSavingsOfVasiliy += totalSavingsOfVasiliy * 0.07;
             d++;
             System.out.println("Месяц " + d + ", сумма накоплений Василия равна " + totalSavingsOfVasiliy + " рублей.");
         }
@@ -43,7 +43,7 @@ public class Main {
         double totalSavingsOfVasiliy1 = 15000;
         int e = 0;
         while (totalSavingsOfVasiliy1 <= 12_000_000) {
-            totalSavingsOfVasiliy1 = totalSavingsOfVasiliy1 + (totalSavingsOfVasiliy1 * 0.07);
+            totalSavingsOfVasiliy1 += totalSavingsOfVasiliy1 * 0.07;
             e++;
             if (e % 6 == 0) {
                 System.out.println("Месяц " + e + ", сумма накоплений Василия равна " + totalSavingsOfVasiliy1 + " рублей.");
@@ -53,7 +53,7 @@ public class Main {
         double totalSavingsOfVasiliy2 = 15000f;
         int f = 0;
         while (f <= 12 * 9) {
-            totalSavingsOfVasiliy2 = totalSavingsOfVasiliy2 + (totalSavingsOfVasiliy2 * 0.07);
+            totalSavingsOfVasiliy2 += totalSavingsOfVasiliy2 * 0.07;
             f++;
             if (f % 6 == 0) {
                 System.out.println("Месяц " + f + ", сумма накоплений Василия равна " + totalSavingsOfVasiliy2 + " рублей.");
@@ -62,7 +62,7 @@ public class Main {
 
         System.out.println("Задание 6.2.4.");
         int firstFridayInMonth = 4;
-        for (; firstFridayInMonth <= 31; firstFridayInMonth = firstFridayInMonth + 7) {
+        for (; firstFridayInMonth <= 31; firstFridayInMonth += 7) {
             System.out.println("Сегодня пятница, " + firstFridayInMonth + " число. Необходимо подготовить отчет.");
         }
 
